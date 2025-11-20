@@ -7,6 +7,7 @@ import { ProgressBar } from "./components/ProgressBar";
 import { Stopwatch } from "./components/Stopwatch";
 import { MortgageCalculator } from "./components/MortgageCalculator";
 import { ToggleBooleanComponent } from "./components/ToggleBoolean";
+import { CounterComponent } from "./components/Counter";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -78,6 +79,7 @@ export const App = () => {
           </div>
           <MortgageCalculator />
           <ToggleBooleanComponent/>
+          <CounterComponent/>
         </main>
         <aside>Ads</aside>
       </div>
