@@ -36,7 +36,7 @@ footer {
 /* Main container */
 .container {
   display: flex;
-  width:"100%";
+  width: 100vw;
   flex: 1; /* Take available space between header and footer */
 }
 
