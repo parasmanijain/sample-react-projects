@@ -9,6 +9,7 @@ import { MortgageCalculator } from "./components/MortgageCalculator";
 import { ToggleBooleanComponent } from "./components/ToggleBoolean";
 import { CounterComponent } from "./components/Counter";
 import { SearchBar } from "./components/SearchBar";
+import { Tabs } from "./components/Tabs";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -37,7 +38,13 @@ export const App = () => {
     },
   ];
 
-  const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+  const items = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+  const tabs = [
+    { label: "Tab 1", content: <div>Content of Tab 1</div> },
+    { label: "Tab 2", content: <div>Content of Tab 2</div> },
+    { label: "Tab 3", content: <div>Content of Tab 3</div> },
+  ];
+
   return (
     <div className="app">
       <header>Header</header>
@@ -84,10 +91,10 @@ export const App = () => {
           <ToggleBooleanComponent />
           <CounterComponent />
           <SearchBar items={items} />
+          <Tabs tabs={tabs} />
         </main>
         <aside>Ads</aside>
       </div>
-
       <footer>Footer</footer>
     </div>
   );
