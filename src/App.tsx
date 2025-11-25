@@ -8,6 +8,7 @@ import { Stopwatch } from "./components/Stopwatch";
 import { MortgageCalculator } from "./components/MortgageCalculator";
 import { ToggleBooleanComponent } from "./components/ToggleBoolean";
 import { CounterComponent } from "./components/Counter";
+import { SearchBar } from "./components/SearchBar";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -35,6 +36,8 @@ export const App = () => {
         "An accordion is a vertically stacked list of sections that expand or collapse when clicked.",
     },
   ];
+
+  const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
   return (
     <div className="app">
       <header>Header</header>
@@ -78,8 +81,9 @@ export const App = () => {
             </div>
           </div>
           <MortgageCalculator />
-          <ToggleBooleanComponent/>
-          <CounterComponent/>
+          <ToggleBooleanComponent />
+          <CounterComponent />
+          <SearchBar items={items} />
         </main>
         <aside>Ads</aside>
       </div>
