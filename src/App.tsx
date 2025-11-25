@@ -14,10 +14,11 @@ import { Carousel } from "./components/Carousel";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { VirtualizedList } from "./components/VirtualizedList";
 import { TodoList } from "./components/TodoList";
+import { Modal } from "./components/Modal";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const addBar = () => {
     setBars((prev) => [...prev, Date.now()]);
   };
@@ -106,6 +107,13 @@ export const App = () => {
           <MultiStepForm />
           <VirtualizedList items={longListItems} itemHeight={50} height={400} />
           <TodoList />
+          <div>
+            <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+              <h1>Modal Content</h1>
+              <p>This is the content inside the modal</p>
+            </Modal>
+          </div>
         </main>
         <aside>Ads</aside>
       </div>
