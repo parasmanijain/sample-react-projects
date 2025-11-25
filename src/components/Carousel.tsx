@@ -23,13 +23,3 @@ export const Carousel = ({ images }: CarouselProps) => {
         </div>
     );
 };
-
-const App = () => {
-    const images = [
-        'https://via.placeholder.com/600x400?text=Image+1',
-        'https://via.placeholder.com/600x400?text=Image+2',
-        'https://via.placeholder.com/600x400?text=Image+3',
-    ];
-
-    return <Carousel images={images} />;
-};
