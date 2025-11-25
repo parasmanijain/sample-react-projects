@@ -10,6 +10,7 @@ import { ToggleBooleanComponent } from "./components/ToggleBoolean";
 import { CounterComponent } from "./components/Counter";
 import { SearchBar } from "./components/SearchBar";
 import { Tabs } from "./components/Tabs";
+import { Carousel } from "./components/Carousel";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -43,6 +44,11 @@ export const App = () => {
     { label: "Tab 1", content: <div>Content of Tab 1</div> },
     { label: "Tab 2", content: <div>Content of Tab 2</div> },
     { label: "Tab 3", content: <div>Content of Tab 3</div> },
+  ];
+  const images = [
+    'https://via.placeholder.com/600x400?text=Image+1',
+    'https://via.placeholder.com/600x400?text=Image+2',
+    'https://via.placeholder.com/600x400?text=Image+3',
   ];
 
   return (
@@ -92,6 +98,7 @@ export const App = () => {
           <CounterComponent />
           <SearchBar items={items} />
           <Tabs tabs={tabs} />
+          <Carousel images={images} />
         </main>
         <aside>Ads</aside>
       </div>
