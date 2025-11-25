@@ -15,6 +15,8 @@ import { MultiStepForm } from "./components/MultiStepForm";
 import { VirtualizedList } from "./components/VirtualizedList";
 import { TodoList } from "./components/TodoList";
 import { Modal } from "./components/Modal";
+import { StarRating } from "./components/StarRating";
+import { CountdownTimer } from "./components/CountdownTimer";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -114,6 +116,9 @@ export const App = () => {
               <p>This is the content inside the modal</p>
             </Modal>
           </div>
+          <StarRating />
+          <StarRating totalStars={2} />
+          <CountdownTimer initialSeconds={60} />
         </main>
         <aside>Ads</aside>
       </div>
