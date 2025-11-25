@@ -11,6 +11,7 @@ import { CounterComponent } from "./components/Counter";
 import { SearchBar } from "./components/SearchBar";
 import { Tabs } from "./components/Tabs";
 import { Carousel } from "./components/Carousel";
+import { MultiStepForm } from "./components/MultiStepForm";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -99,6 +100,7 @@ export const App = () => {
           <SearchBar items={items} />
           <Tabs tabs={tabs} />
           <Carousel images={images} />
+          <MultiStepForm />
         </main>
         <aside>Ads</aside>
       </div>
