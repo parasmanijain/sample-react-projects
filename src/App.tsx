@@ -12,6 +12,7 @@ import { SearchBar } from "./components/SearchBar";
 import { Tabs } from "./components/Tabs";
 import { Carousel } from "./components/Carousel";
 import { MultiStepForm } from "./components/MultiStepForm";
+import { VirtualizedList } from "./components/VirtualizedList";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -47,11 +48,12 @@ export const App = () => {
     { label: "Tab 3", content: <div>Content of Tab 3</div> },
   ];
   const images = [
-    'https://via.placeholder.com/600x400?text=Image+1',
-    'https://via.placeholder.com/600x400?text=Image+2',
-    'https://via.placeholder.com/600x400?text=Image+3',
+    "https://via.placeholder.com/600x400?text=Image+1",
+    "https://via.placeholder.com/600x400?text=Image+2",
+    "https://via.placeholder.com/600x400?text=Image+3",
   ];
 
+  const longListItems = Array.from({ length: 1000 }, (_, i) => `Item ${i + 1}`);
   return (
     <div className="app">
       <header>Header</header>
@@ -101,6 +103,7 @@ export const App = () => {
           <Tabs tabs={tabs} />
           <Carousel images={images} />
           <MultiStepForm />
+          <VirtualizedList items={longListItems} itemHeight={50} height={400} />
         </main>
         <aside>Ads</aside>
       </div>
