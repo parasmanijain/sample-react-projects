@@ -13,6 +13,7 @@ import { Tabs } from "./components/Tabs";
 import { Carousel } from "./components/Carousel";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { VirtualizedList } from "./components/VirtualizedList";
+import { TodoList } from "./components/TodoList";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -104,6 +105,7 @@ export const App = () => {
           <Carousel images={images} />
           <MultiStepForm />
           <VirtualizedList items={longListItems} itemHeight={50} height={400} />
+          <TodoList />
         </main>
         <aside>Ads</aside>
       </div>
