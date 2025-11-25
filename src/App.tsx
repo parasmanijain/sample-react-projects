@@ -17,6 +17,7 @@ import { TodoList } from "./components/TodoList";
 import { Modal } from "./components/Modal";
 import { StarRating } from "./components/StarRating";
 import { CountdownTimer } from "./components/CountdownTimer";
+import { DragDropTodoList } from "./components/DragDropTodoList";
 
 export const App = () => {
   const [bars, setBars] = useState<number[]>([]);
@@ -119,6 +120,7 @@ export const App = () => {
           <StarRating />
           <StarRating totalStars={2} />
           <CountdownTimer initialSeconds={60} />
+          <DragDropTodoList />
         </main>
         <aside>Ads</aside>
       </div>
