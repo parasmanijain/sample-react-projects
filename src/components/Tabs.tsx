@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-
+import classes from "./Tabs.module.scss";
 interface TabsProps {
     label: string;
     content: ReactNode;
@@ -8,8 +8,8 @@ interface TabsProps {
 export const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
     const [activeTab, setActiveTab] = useState(-1);
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", height: "100%" }}>
-            <div className="tab-buttons">
+        <div className={classes.tabContainer}>
+            <div className={classes.tabButtons}>
                 {tabs.map((tab, index) => (
                     <button
                         key={index}
@@ -21,7 +21,7 @@ export const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
                 ))}
             </div>
             {activeTab > -1 && (
-                <div className="tab-content">{tabs[activeTab].content}</div>
+                <div className={classes.tabContent}>{tabs[activeTab].content}</div>
             )}
         </div>
     );
