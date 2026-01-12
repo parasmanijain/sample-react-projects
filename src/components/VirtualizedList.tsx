@@ -1,18 +1,12 @@
 import { useRef, useState } from "react";
 
-interface VirtualizedListProps {
-    items: string[];
-    itemHeight: number;
-    height: number;
-}
+const itemHeight = 50;
+const height = 400;
+const longListItems = Array.from({ length: 1000 }, (_, i) => `Item ${i + 1}`);
 
-export const VirtualizedList = ({
-    items,
-    itemHeight,
-    height,
-}: VirtualizedListProps) => {
+export const VirtualizedList = () => {
     const [scrollTop, setScrollTop] = useState(0);
-    const totalHeight = items.length * itemHeight;
+    const totalHeight = longListItems.length * itemHeight;
     const viewportRef = useRef<HTMLDivElement | null>(null);
 
     if (!viewportRef.current) {
@@ -27,11 +21,11 @@ export const VirtualizedList = ({
 
     const startIndex = Math.floor(scrollTop / itemHeight);
     const endIndex = Math.min(
-        items.length - 1,
+        longListItems.length - 1,
         startIndex + Math.ceil(height / itemHeight)
     );
 
-    const visibleItems = items
+    const visibleItems = longListItems
         .slice(startIndex, endIndex + 1)
         .map((item, index) => (
             <div key={index} style={{ height: itemHeight }}>

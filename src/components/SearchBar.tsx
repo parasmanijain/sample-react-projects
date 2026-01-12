@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
-interface SearchBarProps {
-    items: string[]
-}
+const items = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
 
-export const SearchBar = ({ items }: SearchBarProps) => {
+export const SearchBar = () => {
     const [query, setQuery] = useState('');
 
     const filteredItems = items.filter(item =>

@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-interface CarouselProps {
-    images: string[];
-}
+const images = [
+    "https://via.placeholder.com/600x400?text=Image+1",
+    "https://via.placeholder.com/600x400?text=Image+2",
+    "https://via.placeholder.com/600x400?text=Image+3",
+];
 
-export const Carousel = ({ images }: CarouselProps) => {
+export const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const goToNext = () => {

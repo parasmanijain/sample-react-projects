@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 
-interface CountdownTimerProps {
-    initialSeconds: number;
-}
+const initialSeconds = 60;
 
-export const CountdownTimer = ({ initialSeconds }: CountdownTimerProps) => {
+export const CountdownTimer = () => {
     const [seconds, setSeconds] = useState(initialSeconds);
 
     useEffect(() => {
