@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 
-export const Oscillator = ({ stepMs = 200 }: { stepMs?: number }) => {
+export const App = ({ stepMs = 200 }: { stepMs?: number }) => {
   const [value, setValue] = useState(0);
   const [playing, setPlaying] = useState(false);
   // direction: 1 = increasing, -1 = decreasing
@@ -51,7 +51,7 @@ export const Oscillator = ({ stepMs = 200 }: { stepMs?: number }) => {
 
   return (
     <>
-    <h1>Oscillator</h1>
+      <h1>Oscillator</h1>
       <div style={{ fontSize: 36 }}>{value}</div>
       <div>Direction: {direction === 1 ? "↑" : "↓"}</div>
       <div style={{ marginTop: 8 }}>

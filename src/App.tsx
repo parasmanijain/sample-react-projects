@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.scss";
 import { Accordion } from "./components/Accordion";
 import { ContactForm } from "./components/ContactForm";
-import { Oscillator } from "./components/Oscillator";
 import { ProgressBar } from "./components/ProgressBar";
 import { Stopwatch } from "./components/Stopwatch";
 import { MortgageCalculator } from "./components/MortgageCalculator";
@@ -66,7 +65,6 @@ export const App = () => {
       <div className="container">
         <nav>Navigation</nav>
         <main className="main-content">
-          <Oscillator />
           <Stopwatch />
           <div style={{ padding: "2rem", background: "#fafafa" }}>
             <h1 style={{ textAlign: "center" }}>Accordion Example</h1>
