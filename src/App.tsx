@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.scss";
 import { Accordion } from "./components/Accordion";
 import { ContactForm } from "./components/ContactForm";
@@ -41,6 +42,21 @@ export const App = () => {
     { label: "CountdownTimer", content: <CountdownTimer /> },
     { label: "DragDropTodoList", content: <DragDropTodoList /> },
   ];
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    const onResize = () => console.log("resize");
+    const onScroll = () => console.log("scroll");
+    const onKeyDown = (e: KeyboardEvent) => console.log(e.key);
+    window.addEventListener("resize", onResize, { signal });
+    window.addEventListener("scroll", onScroll, { signal });
+    window.addEventListener("keydown", onKeyDown, { signal });
+    return () => {
+      // abort once → all listeners cleaned
+      controller.abort();
+    };
+  }, []);
 
   return (
     <div className="app">
