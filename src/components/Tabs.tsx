@@ -16,7 +16,7 @@ export const Tab: FC<TabProps> = ({ children }) => {
     return <>{children}</>;
 };
 
-interface TabsProps {
+export interface TabsProps {
     children: ReactNode;
 }
 

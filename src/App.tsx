@@ -21,7 +21,11 @@ import { Modal } from "./components/Modal";
 import { CustomHookComponent } from "./components/CustomHook";
 import { FormWithLogic } from "./components/FormWithLogic";
 import { Button } from "./components/Button";
-import { RenderProps } from "./components/RenderProps";
+import { RenderProps } from "./components/patterns/RenderProps";
+import { ControlProps } from "./components/patterns/ControlProps";
+import { PropGetters } from "./components/patterns/PropGetters";
+import { StateInitializer } from "./components/patterns/StateInitializer";
+import { StateReducer } from "./components/patterns/StateReducer";
 
 export const App = () => {
   const tabs = [
@@ -36,7 +40,7 @@ export const App = () => {
     { label: "Multi Step Form", content: <MultiStepForm /> },
     {
       label: "Virtualized List",
-      content: <VirtualizedList />,
+      content: <VirtualizedList />
     },
     { label: "Accordion", content: <Accordion /> },
     { label: "ProgressBar", content: <ProgressBar /> },
@@ -57,7 +61,7 @@ export const App = () => {
         >
           Default Button Text
         </Button>
-      ),
+      )
     },
     {
       label: "Large Red Button",
@@ -71,7 +75,7 @@ export const App = () => {
         >
           Large Red Button Text
         </Button>
-      ),
+      )
     },
     {
       label: "Small Green Button",
@@ -85,10 +89,22 @@ export const App = () => {
         >
           Small Green Button Text
         </Button>
-      ),
+      )
     },
     {
       label: "Render Props", content: <RenderProps />
+    },
+    {
+      label: "Control Props", content: <ControlProps />
+    },
+    {
+      label: "Prop Getters", content: <PropGetters />
+    },
+    {
+      label: "State Initializer", content: <StateInitializer />
+    },
+    {
+      label: "State Reducer", content: <StateReducer />
     }
   ];
 

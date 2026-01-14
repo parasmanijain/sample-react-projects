@@ -57,11 +57,9 @@ const renderError = (error: Error, errorInfo: ErrorInfo) => {
 
 export const RenderProps = () => {
     return (<ErrorBoundary renderError={renderError}>
-        {/* Componentes envueltos por el ErrorBoundary */}
         <div>
             <h1>Welcome to My App</h1>
             <p>This is a sample application.</p>
-            {/* Simulando un error */}
             <button onClick={() => { throw new Error('An unexpected error occurred.'); }}>
                 Trigger Error
             </button>
