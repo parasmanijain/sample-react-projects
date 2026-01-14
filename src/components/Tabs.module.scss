@@ -3,8 +3,46 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  .tabButtons,
-  .tabContent {
-    margin: 10px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; // prevents layout spill
+}
+
+.tabButtons {
+  margin: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; // ✅ allow wrapping
+  justify-content: center; // center when wrapped
+  max-width: 100%; // prevent overflow
+}
+
+.tabButton {
+  padding: 8px 16px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  white-space: nowrap; // prevent ugly line breaks inside button
+
+  &:hover {
+    background: #ddd;
   }
+
+  &.active {
+    background: #4f46e5;
+    color: white;
+  }
+}
+
+.tabContent {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  width: 100%;
+  max-width: 640px;
+  overflow-y: auto;
+  box-sizing: border-box; // prevents width overflow
 }

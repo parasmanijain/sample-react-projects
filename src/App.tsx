@@ -8,7 +8,7 @@ import { MortgageCalculator } from "./components/MortgageCalculator";
 import { ToggleBooleanComponent } from "./components/ToggleBoolean";
 import { CounterComponent } from "./components/Counter";
 import { SearchBar } from "./components/SearchBar";
-import { Tabs } from "./components/Tabs";
+import { Tab, Tabs } from "./components/Tabs";
 import { Carousel } from "./components/Carousel";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { VirtualizedList } from "./components/VirtualizedList";
@@ -20,6 +20,7 @@ import { Oscillator } from "./components/Oscillator";
 import { Modal } from "./components/Modal";
 import { CustomHookComponent } from "./components/CustomHook";
 import { FormWithLogic } from "./components/FormWithLogic";
+import { Button } from "./components/Button";
 
 export const App = () => {
   const tabs = [
@@ -44,7 +45,47 @@ export const App = () => {
     { label: "Countdown Timer", content: <CountdownTimer /> },
     { label: "Drag Drop Todo", content: <DragDropTodoList /> },
     { label: "Custom Hook", content: <CustomHookComponent /> },
-    { label: "HOC Form", content: <FormWithLogic /> }
+    { label: "HOC Form", content: <FormWithLogic /> },
+    {
+      label: "Default Button",
+      content: (
+        <Button
+          onClick={() => {
+            console.log("Default Button Clicked");
+          }}
+        >
+          Default Button Text
+        </Button>
+      ),
+    },
+    {
+      label: "Large Red Button",
+      content: (
+        <Button
+          color="red"
+          size="large"
+          onClick={() => {
+            console.log("Large Red Button Clicked");
+          }}
+        >
+          Large Red Button Text
+        </Button>
+      ),
+    },
+    {
+      label: "Small Green Button",
+      content: (
+        <Button
+          color="green"
+          size="small"
+          onClick={() => {
+            console.log("Small Green Button Clicked");
+          }}
+        >
+          Small Green Button Text
+        </Button>
+      ),
+    },
   ];
 
   useEffect(() => {
@@ -68,7 +109,13 @@ export const App = () => {
       <div className="container">
         <nav>Navigation</nav>
         <main className="main-content">
-          <Tabs tabs={tabs} />
+          <Tabs>
+            {tabs.map(({ label, content }, index: number) => (
+              <Tab label={label} key={index}>
+                {content}
+              </Tab>
+            ))}
+          </Tabs>
         </main>
         <aside>Ads</aside>
       </div>
