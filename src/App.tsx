@@ -18,6 +18,7 @@ import { CountdownTimer } from "./components/CountdownTimer";
 import { DragDropTodoList } from "./components/DragDropTodoList";
 import { Oscillator } from "./components/Oscillator";
 import { Modal } from "./components/Modal";
+import { CustomHookComponent } from "./components/CustomHook";
 
 export const App = () => {
   const tabs = [
@@ -39,8 +40,9 @@ export const App = () => {
     { label: "TodoList", content: <TodoList /> },
     { label: "Modal", content: <Modal /> },
     { label: "Star Rating", content: <StarRating /> },
-    { label: "CountdownTimer", content: <CountdownTimer /> },
-    { label: "DragDropTodoList", content: <DragDropTodoList /> },
+    { label: "Countdown Timer", content: <CountdownTimer /> },
+    { label: "Drag Drop Todo", content: <DragDropTodoList /> },
+    { label: "Custom Hook", content: <CustomHookComponent /> },
   ];
 
   useEffect(() => {
