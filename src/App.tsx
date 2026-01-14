@@ -19,6 +19,7 @@ import { DragDropTodoList } from "./components/DragDropTodoList";
 import { Oscillator } from "./components/Oscillator";
 import { Modal } from "./components/Modal";
 import { CustomHookComponent } from "./components/CustomHook";
+import { FormWithLogic } from "./components/FormWithLogic";
 
 export const App = () => {
   const tabs = [
@@ -43,6 +44,7 @@ export const App = () => {
     { label: "Countdown Timer", content: <CountdownTimer /> },
     { label: "Drag Drop Todo", content: <DragDropTodoList /> },
     { label: "Custom Hook", content: <CustomHookComponent /> },
+    { label: "HOC Form", content: <FormWithLogic /> }
   ];
 
   useEffect(() => {
