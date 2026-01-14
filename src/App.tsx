@@ -21,6 +21,7 @@ import { Modal } from "./components/Modal";
 import { CustomHookComponent } from "./components/CustomHook";
 import { FormWithLogic } from "./components/FormWithLogic";
 import { Button } from "./components/Button";
+import { RenderProps } from "./components/RenderProps";
 
 export const App = () => {
   const tabs = [
@@ -86,6 +87,9 @@ export const App = () => {
         </Button>
       ),
     },
+    {
+      label: "Render Props", content: <RenderProps />
+    }
   ];
 
   useEffect(() => {
