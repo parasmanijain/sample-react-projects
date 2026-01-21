@@ -26,6 +26,7 @@ import { ControlProps } from "./components/patterns/ControlProps";
 import { PropGetters } from "./components/patterns/PropGetters";
 import { StateInitializer } from "./components/patterns/StateInitializer";
 import { StateReducer } from "./components/patterns/StateReducer";
+import AnchorDropdown from "./components/AnchorDropdown";
 
 export const App = () => {
   const tabs = [
@@ -105,6 +106,9 @@ export const App = () => {
     },
     {
       label: "State Reducer", content: <StateReducer />
+    },
+    {
+      label: "AnchorDropdown", content: <AnchorDropdown />
     }
   ];
 
